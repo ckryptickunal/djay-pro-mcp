@@ -1,0 +1,48 @@
+{
+  "name": "djay-pro-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that gives AI agents full control of djay Pro for Mac (decks, mixer, FX, Neural Mix, library, Automix, recording) via generated MIDI mappings, accessibility and the djay library database.",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "djay-pro-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && sh scripts/build-bridges.sh",
+    "build:ts": "tsc -p tsconfig.json",
+    "build:bridges": "sh scripts/build-bridges.sh",
+    "setup": "node dist/cli.js setup",
+    "doctor": "node dist/cli.js doctor",
+    "start": "node --disable-warning=ExperimentalWarning dist/index.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "~5.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckryptickunal/djay-pro-mcp.git"
+  },
+  "homepage": "https://github.com/ckryptickunal/djay-pro-mcp#readme",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "djay",
+    "djay-pro",
+    "dj",
+    "midi",
+    "macos",
+    "claude"
+  ],
+  "os": [
+    "darwin"
+  ]
+}
